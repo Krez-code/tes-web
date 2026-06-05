@@ -1,6 +1,6 @@
 ╔═══════════════════════════════════════════════════════════════════════════╗
-║                    🐉 NAGA CSRF EXPLOITER v3.0 🐉                          ║
-║                    FULL AUTO - Endpoint & Parameter Hunter                 ║
+║                    🐉 NAGA CSRF EXPLOITER v3.0 🐉                        ║
+║                    FULL AUTO - Endpoint & Parameter Hunter                ║
 ║                    Auto Detect → Auto Test → Auto Exploit                 ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
 
