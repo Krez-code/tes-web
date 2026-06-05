@@ -1,65 +1,167 @@
-╔═══════════════════════════════════════════════════════════════════════════╗
-║                    🐉 NAGA CSRF EXPLOITER v3.0 🐉                        ║
-║                    FULL AUTO - Endpoint & Parameter Hunter                ║
-║                    Auto Detect → Auto Test → Auto Exploit                 ║
-╚═══════════════════════════════════════════════════════════════════════════╝
+# 🛡️ NAGA CSRF Scanner
 
-[*] python3 scan.py https://target.com
+> Automated CSRF Security Assessment Tool for Authorized Security Testing
 
+NAGA CSRF Scanner adalah alat bantu keamanan yang dirancang untuk membantu pengembang, pentester, dan tim keamanan dalam mengidentifikasi serta mengevaluasi implementasi perlindungan Cross-Site Request Forgery (CSRF) pada aplikasi web.
 
-[*] Target: https://target.com
+## ✨ Fitur Utama
 
-[>] Fetching target page...
-[✓] Page loaded (Status: 200)
+* Deteksi token CSRF otomatis
+* Analisis cookie sesi
+* Identifikasi endpoint sensitif
+* Analisis parameter formulir
+* Pemeriksaan validasi keamanan
+* Laporan hasil pemindaian yang mudah dipahami
+* Mendukung berbagai framework web populer
 
-[1] Extracting Tokens...
-[+] Found 2 tokens:
-    - Meta: csrf-token: 7a8b9c0d1e2f3g4h5i6j7k8l9m0n1o2p
-    - Cookie: XSRF-TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+---
 
-[2] Extracting Session Cookies...
-[+] Found 1 session cookies:
-    - session: abc123def456ghi789jkl...
+## 🚀 Instalasi
 
+```bash
+git clone https://github.com/username/naga-csrf-scanner.git
+cd naga-csrf-scanner
+pip install -r requirements.txt
+```
+
+---
+
+## 📌 Penggunaan
+
+```bash
+python scan.py https://example.com
+```
+
+Contoh:
+
+```bash
+python scan.py https://target.com
+```
+
+---
+
+## 📋 Menu Pengujian
+
+### 1️⃣ Password Change Endpoint Analysis
+
+Melakukan analisis terhadap endpoint yang digunakan untuk proses perubahan kata sandi.
+
+**Fitur:**
+
+* Mendeteksi endpoint perubahan password secara otomatis.
+* Memeriksa keberadaan token CSRF.
+* Menganalisis parameter formulir yang digunakan.
+* Mengidentifikasi potensi kesalahan konfigurasi keamanan.
+
+**Contoh endpoint yang diperiksa:**
+
+```text
+/user/password
+/profile/password
+/settings/password
+/api/change-password
+```
+
+---
+
+### 2️⃣ Email Change Endpoint Analysis
+
+Melakukan analisis terhadap endpoint yang digunakan untuk proses perubahan alamat email akun.
+
+**Fitur:**
+
+* Mendeteksi endpoint perubahan email.
+* Memeriksa implementasi proteksi CSRF.
+* Mengidentifikasi parameter email yang digunakan.
+* Membantu validasi konfigurasi keamanan akun.
+
+**Contoh endpoint yang diperiksa:**
+
+```text
+/profile/email
+/user/email
+/settings/account
+```
+
+---
+
+### 3️⃣ Password Change Validation Test
+
+Melakukan pengujian validasi keamanan pada fitur perubahan kata sandi.
+
+**Fitur:**
+
+* Memeriksa validasi input.
+* Memastikan mekanisme konfirmasi password berfungsi.
+* Menganalisis proses autentikasi tambahan jika tersedia.
+* Membantu memastikan perubahan password mengikuti praktik keamanan yang baik.
+
+---
+
+### 4️⃣ Skip
+
+Melewati pengujian lanjutan dan hanya menjalankan pemindaian dasar.
+
+---
+
+## 📊 Contoh Output
+
+```text
 ============================================================
-💀 CSRF EXPLOITATION MENU (AUTO MODE)
+NAGA CSRF Scanner
 ============================================================
 
-    1. Change Password (AUTO - Scan & Exploit)
-    2. Change Email (AUTO - Scan & Exploit)
-    3. Change Password with Known Current Password
-    4. Skip
+Target: https://example.com
 
-[?] Pilih (1-4): 1
+[✓] Halaman berhasil dimuat
+[✓] Token CSRF ditemukan
+[✓] Cookie sesi terdeteksi
 
-[?] New password: Hacked@2024
+Analisis Endpoint:
+ - /login
+ - /profile
+ - /settings
 
-[*] Starting auto-exploit for password change...
+Hasil:
+[PASS] Proteksi CSRF aktif
+[PASS] Validasi token berjalan dengan baik
+[PASS] Cookie menggunakan atribut keamanan yang sesuai
 
-[>] Scanning for password change endpoints...
-    [200] /user/password (csrf: _token)
-    [200] /profile/password (csrf: csrf_token)
-    [302] /settings/password (csrf: csrfmiddlewaretoken)
-    [200] /api/change-password (csrf: X-CSRF-TOKEN)
+Ringkasan:
+Tidak ditemukan kerentanan CSRF kritis.
+```
 
-[>] Trying to exploit found endpoints...
+---
 
-  [Testing] /user/password
-  Failed (Status: 400)
+## ⚠️ Disclaimer
 
-  [Testing] /profile/password
-  Failed (Status: 400)
+Alat ini hanya boleh digunakan pada sistem yang:
 
-  [Testing] /settings/password
-  Failed (Status: 400)
+* Anda miliki sendiri.
+* Telah memberikan izin tertulis untuk dilakukan pengujian keamanan.
+* Digunakan dalam lingkungan laboratorium atau pembelajaran yang sah.
 
-  [Testing] /api/change-password
+Penggunaan tanpa izin dapat melanggar hukum dan kebijakan keamanan yang berlaku.
 
-✅ SUCCESS! Password changed at /api/change-password
-   Status: 200
-   Used data: {'X-CSRF-TOKEN': 'token', 'password': 'Hacked@2024', 'confirm': 'Hacked@2024'}
+---
 
-🎉 PASSWORD CHANGE SUCCESSFUL!
-⚠️  New password: Hacked@2024
+## 🤝 Kontribusi
 
-[✓] Scan completed!
+Kontribusi berupa perbaikan bug, peningkatan dokumentasi, dan pengembangan fitur baru sangat diterima.
+
+---
+
+## 📄 Lisensi
+
+MIT License
+
+---
+
+### 👨‍💻 Developer
+
+**Muhammad Reza Nandaka**
+
+* Portfolio: https://krez-portfolio.vercel.app
+* GitHub: https://github.com/Krez-code
+
+Keamanan bukan hanya menemukan celah, tetapi juga membantu memperbaikinya agar sistem menjadi lebih kuat.
