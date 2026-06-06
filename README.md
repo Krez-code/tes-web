@@ -20,7 +20,7 @@ NAGA CSRF Scanner adalah alat bantu keamanan yang dirancang untuk membantu penge
 
 ```bash
 https://github.com/Krez-code/SCAN-CSRF-EXPLOITER-.git
-cd naga-csrf-scanner
+cd SCAN-CSRF-EXPLOITER
 pip install -r requirements.txt
 ```
 
